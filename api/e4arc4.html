@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<meta charset="utf-8" />
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+<link href="../css/base.css" type="text/css" rel="stylesheet" />
+<link href="../css/context.css" type="text/css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<head>
+    <title>乾坤框架—API</title>
+</head>
+
+<body>
+    <div class="title"><a href="../index.html">乾坤框架—API</a></div>
+    <div style="width: 100%;height: 105px;background-color: rgba(18, 18, 18, 0.5);"></div>
+
+    <div class="result">
+        <p class="p1">易安卓RC4算法API</p>
+        <p class="p2"><span style="color: aqua;"># </span>接口地址</p>
+        <p class="p3">http://000081.xyz/api/e4arc4.php</p>
+        <p class="p2"><span style="color: rgb(187, 255, 0);"># </span>返回格式</p>
+        <p class="p3">JSON</p>
+        <p class="p2"><span style="color: rgb(255, 123, 0);"># </span>请求方式</p>
+        <p class="p3">GET</p>
+        <p class="p2"><span style="color: rgb(255, 217, 0);"># </span>参数列表</p>
+        <p class="p3">请求参数</p>
+        <table border="3" bordercolor="white">
+            <tr>
+                <th>字段</th>
+                <th>必填</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>是</td>
+                <td>0为加密，1为解密</td>
+            </tr>
+            <tr>
+                <td>key</td>
+                <td>是</td>
+                <td>加解密密钥</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>是</td>
+                <td>加解密文本</td>
+            </tr>
+        </table>
+        <p class="p3">返回参数</p>
+        <table border="3" bordercolor="white">
+            <tr>
+                <th>字段</th>
+                <th>返回值</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>200</td>
+                <td>请求成功</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>404</td>
+                <td>请求格式错误</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>RC4加密</td>
+                <td>返回执行的操作</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>RC4解密</td>
+                <td>返回执行的操作</td>
+            </tr>
+            <tr>
+                <td>key</td>
+                <td>加解密密钥</td>
+                <td>返回加解密密钥</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>加解密文本</td>
+                <td>返回操作前的加解密文本</td>
+            </tr>
+            <tr>
+                <td>result</td>
+                <td>加解密文本</td>
+                <td>返回操作后的加解密文本</td>
+            </tr>
+        </table>
+
+
+
+
+        <p class="p2"><span style="color: rgb(10, 231, 165);"># </span>请求示例</p>
+        <p class="p3">
+            加密模式：
+            <br>&nbsp&nbsp&nbsp&nbsp密钥：123&nbsp&nbsp文本：123
+            <br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/e4arc4.php?type=0&key=123&text=123
+            <br><br>解密模式：
+            <br>&nbsp&nbsp&nbsp&nbsp密钥：123&nbsp&nbsp文本：62c28c
+            <br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/e4arc4.php?type=1&key=123&text=62c28c
+            <br>
+        </p>
+        <p class="p2"><span style="color: rgb(15, 240, 53);"># </span>返回内容</p>
+        <p class="p3">
+            加密模式
+            <br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"RC4加密","key":"123","text":"123","result":"62c28c"}
+            <br><br>解密模式：
+            <br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"RC4解密","key":"123","text":"62c28c","result":"123"}
+            <br>
+        </p>
+        <br>
+        <br>
+    </div>
+
+
+
+
+    <div class="foot">
+        <p style="color:white;font-size: 25px;">关于我们</p><br>
+        <p style="color:white;font-size: 20px;">备案号：粤ICP备2021124556号</p>
+        <p style="color:white;font-size: 20px;">联系邮箱：1585364631@qq.com</p>
+    </div>
+</body>
+
+</html>

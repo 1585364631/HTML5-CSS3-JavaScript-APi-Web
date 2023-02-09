@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<meta charset="utf-8" />
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+<link href="../css/base.css" type="text/css" rel="stylesheet" />
+<link href="../css/context.css" type="text/css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<head>
+    <title>乾坤框架—API</title>
+</head>
+
+<body>
+    <div class="title"><a href="../index.html">乾坤框架—API</a></div>
+    <div style="width: 100%;height: 105px;background-color: rgba(18, 18, 18, 0.5);"></div>
+
+    <div class="result">
+        <p class="p1">万年历API</p>
+        <p class="p2"><span style="color: aqua;"># </span>接口地址</p>
+        <p class="p3">http://000081.xyz/api/wnl.php</p>
+        <p class="p2"><span style="color: rgb(187, 255, 0);"># </span>返回格式</p>
+        <p class="p3">JSON</p>
+        <p class="p2"><span style="color: rgb(255, 123, 0);"># </span>请求方式</p>
+        <p class="p3">GET</p>
+        <p class="p2"><span style="color: rgb(255, 217, 0);"># </span>参数列表</p>
+        <p class="p3">请求参数</p>
+        <table border="3" bordercolor="white">
+            <tr>
+                <th>字段</th>
+                <th>必填</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>是</td>
+                <td>0为阳历日期，1为阳历日期</td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td>是</td>
+                <td>请求日期的年份</td>
+            </tr>
+            <tr>
+                <td>month</td>
+                <td>是</td>
+                <td>请求日期的月份</td>
+            </tr>
+            <tr>
+                <td>day</td>
+                <td>是</td>
+                <td>请求日期的日数</td>
+            </tr>
+            <tr>
+                <td>show</td>
+                <td>否</td>
+                <td>填1则返回json键名的中文名</td>
+            </tr>
+        </table>
+        <p class="p3">返回参数</p>
+        <table border="3" bordercolor="white">
+            <tr>
+                <th>字段</th>
+                <th>返回值</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>200</td>
+                <td>请求成功</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>404</td>
+                <td>请求失败</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>阳历</td>
+                <td>date字段返回日期类型</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>阴历</td>
+                <td>返回date字段的日期类型</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>日期</td>
+                <td>返回type字段的日期</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>JSON内容</td>
+                <td>返回请求JSON内容结果</td>
+            </tr>
+        </table>
+
+
+
+
+        <p class="p2"><span style="color: rgb(10, 231, 165);"># </span>请求示例</p>
+        <p class="p3">
+            简洁模式：<br>&nbsp&nbsp&nbsp&nbsp阴历：2021年8月3日<br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/wnl.php?type=1&year=2021&month=8&day=3<br><br>&nbsp&nbsp&nbsp&nbsp阳历：2021年9月9日<br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/wnl.php?type=0&year=2021&month=9&day=9
+            <br><br>详细模式：
+            <br>&nbsp&nbsp&nbsp&nbsp阴历：2021年8月3日<br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/wnl.php?type=1&year=2021&month=8&day=3&show=1<br><br>&nbsp&nbsp&nbsp&nbsp阳历：2021年9月9日<br>&nbsp&nbsp&nbsp&nbsphttp://000081.xyz/api/wnl.php?type=0&year=2021&month=9&day=9&show=1
+        </p>
+        <p class="p2"><span style="color: rgb(15, 240, 53);"># </span>返回内容</p>
+        <p class="p3">
+            简洁模式：<br>&nbsp&nbsp&nbsp&nbsp阴历：2021年8月3日<br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"阴历","date":"2021-8-3","text":[{"GregorianDateTime":"09\/09\/2021 12:00:00.000 AM","LunarDateTime":"2021-8-3","LJie":"华佗诞","GJie":"","Yi":"祭祀.交易.收财.安葬","Ji":"宴会.安床.出行.嫁娶.移徙","ShenWei":"喜神：西北
+            福神：西南 财神：正东阳贵：东北 阴贵：西南 ","Taishen":"碓磨莫移动,火炉休要动,厕道莫修移胎神在外东南停留6天","Chong":"猴日冲(甲寅)虎","SuiSha":"岁煞南","WuxingJiazi":"金","WuxingNaYear":"壁上土","WuxingNaMonth":"山下火","WuxingNaDay":"石榴木","MoonName":"娥眉新月","XingEast":"西方奎木狼-凶","XingWest":"处女座","PengZu":"庚不经络
+            申不安床","JianShen":"闭","TianGanDiZhiYear":"辛丑","TianGanDiZhiMonth":"丁酉","TianGanDiZhiDay":"庚申","LMonthName":"仲秋","LYear":"牛","LMonth":"八月","LDay":"初三","SolarTermName":""}]}
+            <br><br>&nbsp&nbsp&nbsp&nbsp阳历：2021年9月9日<br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"阳历","date":"09\/09\/2021","text":[{"GregorianDateTime":"09\/09\/2021 12:00:00.000 AM","LunarDateTime":"2021-8-3","LJie":"华佗诞","GJie":"","Yi":"祭祀.交易.收财.安葬","Ji":"宴会.安床.出行.嫁娶.移徙","ShenWei":"喜神：西北
+            福神：西南 财神：正东阳贵：东北 阴贵：西南 ","Taishen":"碓磨莫移动,火炉休要动,厕道莫修移胎神在外东南停留6天","Chong":"猴日冲(甲寅)虎","SuiSha":"岁煞南","WuxingJiazi":"金","WuxingNaYear":"壁上土","WuxingNaMonth":"山下火","WuxingNaDay":"石榴木","MoonName":"娥眉新月","XingEast":"西方奎木狼-凶","XingWest":"处女座","PengZu":"庚不经络
+            申不安床","JianShen":"闭","TianGanDiZhiYear":"辛丑","TianGanDiZhiMonth":"丁酉","TianGanDiZhiDay":"庚申","LMonthName":"仲秋","LYear":"牛","LMonth":"八月","LDay":"初三","SolarTermName":""}]}
+            <br><br>详细模式：
+            <br>&nbsp&nbsp&nbsp&nbsp阴历：2021年8月3日<br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"阴历","date":"2021-8-3","text":[{"GregorianDateTime":"09\/09\/2021 12:00:00.000 AM","LunarDateTime":"2021-8-3","LJie":"华佗诞","GJie":"","Yi":"祭祀.交易.收财.安葬","Ji":"宴会.安床.出行.嫁娶.移徙","ShenWei":"喜神：西北
+            福神：西南 财神：正东阳贵：东北 阴贵：西南 ","Taishen":"碓磨莫移动,火炉休要动,厕道莫修移胎神在外东南停留6天","Chong":"猴日冲(甲寅)虎","SuiSha":"岁煞南","WuxingJiazi":"金","WuxingNaYear":"壁上土","WuxingNaMonth":"山下火","WuxingNaDay":"石榴木","MoonName":"娥眉新月","XingEast":"西方奎木狼-凶","XingWest":"处女座","PengZu":"庚不经络
+            申不安床","JianShen":"闭","TianGanDiZhiYear":"辛丑","TianGanDiZhiMonth":"丁酉","TianGanDiZhiDay":"庚申","LMonthName":"仲秋","LYear":"牛","LMonth":"八月","LDay":"初三","SolarTermName":""}],"show":{"GregorianDateTime":"公历日期","LunarDateTime":"农历日期","LJie":"农历节日","GJie":"公历节日","Yi":"宜","Ji":"忌","ShenWei":"神位","Taishen":"胎神","Chong":"冲煞","SuiSha":"岁煞","WuxingJiazi":"五行甲子","WuxingNaYear":"纳音五行年","WuxingNaMonth":"纳音五行月","WuxingNaDay":"纳音五行日","MoonName":"月相","XingEast":"星宿吉凶","XingWest":"星座","PengZu":"彭祖百忌","JianShen":"值日天神","TianGanDiZhiYear":"天干地支年","TianGanDiZhiMonth":"天干地支月","TianGanDiZhiDay":"天干地支日","LMonthName":"农历月名","LYear":"生肖","LMonth":"十二月名","LDay":"农历日","SolarTermName":"农历节气"}}
+            <br><br>&nbsp&nbsp&nbsp&nbsp阳历：2021年9月9日<br>&nbsp&nbsp&nbsp&nbsp{"code":200,"type":"阳历","date":"09\/09\/2021","text":[{"GregorianDateTime":"09\/09\/2021 12:00:00.000 AM","LunarDateTime":"2021-8-3","LJie":"华佗诞","GJie":"","Yi":"祭祀.交易.收财.安葬","Ji":"宴会.安床.出行.嫁娶.移徙","ShenWei":"喜神：西北
+            福神：西南 财神：正东阳贵：东北 阴贵：西南 ","Taishen":"碓磨莫移动,火炉休要动,厕道莫修移胎神在外东南停留6天","Chong":"猴日冲(甲寅)虎","SuiSha":"岁煞南","WuxingJiazi":"金","WuxingNaYear":"壁上土","WuxingNaMonth":"山下火","WuxingNaDay":"石榴木","MoonName":"娥眉新月","XingEast":"西方奎木狼-凶","XingWest":"处女座","PengZu":"庚不经络
+            申不安床","JianShen":"闭","TianGanDiZhiYear":"辛丑","TianGanDiZhiMonth":"丁酉","TianGanDiZhiDay":"庚申","LMonthName":"仲秋","LYear":"牛","LMonth":"八月","LDay":"初三","SolarTermName":""}],"show":{"GregorianDateTime":"公历日期","LunarDateTime":"农历日期","LJie":"农历节日","GJie":"公历节日","Yi":"宜","Ji":"忌","ShenWei":"神位","Taishen":"胎神","Chong":"冲煞","SuiSha":"岁煞","WuxingJiazi":"五行甲子","WuxingNaYear":"纳音五行年","WuxingNaMonth":"纳音五行月","WuxingNaDay":"纳音五行日","MoonName":"月相","XingEast":"星宿吉凶","XingWest":"星座","PengZu":"彭祖百忌","JianShen":"值日天神","TianGanDiZhiYear":"天干地支年","TianGanDiZhiMonth":"天干地支月","TianGanDiZhiDay":"天干地支日","LMonthName":"农历月名","LYear":"生肖","LMonth":"十二月名","LDay":"农历日","SolarTermName":"农历节气"}}
+        </p>
+        <br>
+        <br>
+    </div>
+
+
+
+
+    <div class="foot">
+        <p style="color:white;font-size: 25px;">关于我们</p><br>
+        <p style="color:white;font-size: 20px;">备案号：粤ICP备2021124556号</p>
+        <p style="color:white;font-size: 20px;">联系邮箱：1585364631@qq.com</p>
+    </div>
+</body>
+
+</html>
